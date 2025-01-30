@@ -1,7 +1,14 @@
 import customtkinter as ct
 import tkinter as tk
 
+nova_janela = None
+
 def janela():
+    global nova_janela
+
+    if nova_janela and nova_janela.winfo_exists():
+        nova_janela.destroy()
+        
     nova_janela = ct.CTkToplevel(root)
     nova_janela.title("Adicionar Tarefa")
     nova_janela.geometry("300x200")
